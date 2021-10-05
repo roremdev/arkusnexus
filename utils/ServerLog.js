@@ -25,4 +25,14 @@ export default class ServerLog {
         )}`;
         render(header, body);
     }
+    /**
+     * info response ⚠
+     * @param {string} message - body message
+     */
+    static info(message) {
+        const header = `${Symbols.warning} ${chalk.yellowBright(
+            'Info operation'
+        )}`;
+        render(header, message);
+    }
 }
