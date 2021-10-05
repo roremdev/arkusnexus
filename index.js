@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+
+import ServerLog from './utils/ServerLog';
 import config from './config/envServer';
 
 const app = express();
@@ -13,4 +15,4 @@ if (!(mode === 'dev')) {
     app.use(helmet());
 }
 
-app.listen(port, () => console.log(`server - ${mode} on ${serverURL}`));
+app.listen(port, () => ServerLog.listen());
