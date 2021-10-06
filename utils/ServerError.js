@@ -3,14 +3,14 @@
  * @typedef {Object} ErrorObject
  * @property {string} type - scope error by default ServerError
  * @property {number} code - code http error
- * @property {string} message - effective message to log
- * @property {string|undefined} error - error trace instance
+ * @property {string} message - error message
+ * @property {string|undefined} scope - scope error
  */
 
 export default class ServerError extends Error {
     /**
      * constructor server-error
-     * @param {string} message - error effect message
+     * @param {string} message - error message
      * @param {number} [code=500] - error code server error
      */
     constructor(message, code = 500, name = 'ServerError') {
@@ -21,15 +21,15 @@ export default class ServerError extends Error {
 
     /**
      * error object response
-     * @param {string} error - error reason message
+     * @param {string} scope - scope error
      * @returns {ErrorObject}
      */
-    response(error) {
+    response(scope) {
         return {
             type: this.name,
             code: this.code,
             message: this.message,
-            error: error ? error : undefined,
+            scope,
         };
     }
 }

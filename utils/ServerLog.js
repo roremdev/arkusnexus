@@ -17,7 +17,9 @@ const render = (header, body) => {
 };
 
 export default class ServerLog {
-    // listen server response
+    /**
+     * show status up-server
+     */
     static listen() {
         const header = `${chalk.blue(`Server ${appName} on ${mode}`)}`;
         const body = `${chalk.cyan(
@@ -34,5 +36,17 @@ export default class ServerLog {
             'Info operation'
         )}`;
         render(header, message);
+    }
+    /**
+     * error response ✖
+     * @param {string} message - body message
+     */
+    static error(message, scope) {
+        const header = `${Symbols.error} ${chalk.redBright('Error operation')}`;
+        let body = `${Symbols.warning} message - ${chalk.yellowBright(
+            message
+        )}\n`;
+        body = body + `${Symbols.warning} scope - ${chalk.yellowBright(scope)}`;
+        render(header, body);
     }
 }
