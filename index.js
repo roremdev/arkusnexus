@@ -18,3 +18,4 @@ app.use('/api/user', user);
 app.use(errors);
 
 if (mode !== 'test') app.listen(port, () => ServerLog.listen());
+export default app;

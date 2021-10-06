@@ -1,10 +1,10 @@
-require('dotenv').config();
+require('dotenv').config({ path: './config/.env' });
 
 export default {
     appName: process.env.APP_NAME,
     serverURL: `http://${process.env.SERVER}:${process.env.PORT}`,
     port: process.env.PORT,
-    mode: process.env.MODE,
+    mode: process.env.NODE_ENV,
     cacheTimingSeconds: process.env.CACHE_TIMING_SECONDS,
     dbUser: process.env.DB_USER,
     dbPassword: process.env.DB_PASSWORD,

@@ -1,6 +1,7 @@
 import express from 'express';
 
 import ServerLog from '../utils/ServerLog';
+import { response } from '../middlewares/Responses';
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ const router = express.Router();
  */
 router.get('/', (_, res) => {
     ServerLog.info('GET /');
-    res.send('Hello World');
+    response(res, 200, 'Hello World!!', 'Welcome to the API');
 });
 
 export default router;

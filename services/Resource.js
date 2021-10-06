@@ -15,7 +15,6 @@ export default class ResourcesService {
      * @returns {array} - response query mongoDB as array
      */
     async getResource() {
-        const resource = await this.client.get(this.collection);
-        return resource;
+        return await this.client.get(this.collection);
     }
 }
