@@ -1,5 +1,5 @@
 <p align='center' style="color:#35485C; font-size: 24px; font-weight: 600; font-family: 'Dosis';">
-    <img src='logo-text.png' height='150px' alt='Valhalla'/>
+    <img src='logo-text.png' height='150px' alt='Blogue'/>
     <br/>
     <br/>
     <i>
