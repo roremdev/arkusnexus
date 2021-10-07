@@ -41,6 +41,9 @@
         "url": "https://github.com/roremdev/blogue/issues"
     },
     "homepage": "https://blogue-app.herokuapp.com/",
+    "engines": {
+        "node": "14.17.0"
+    },
     "dependencies": {
         "@babel/runtime": "^7.15.4",
         "chalk": "^4.1.2",
