@@ -21,7 +21,11 @@
     },
     "scripts": {
         "test": "NODE_ENV=test jest test/index.test.js --forceExit --silent",
-        "dev": "nodemon --exec babel-node -r dotenv/config index"
+        "dev": "nodemon --exec babel-node -r dotenv/config index",
+        "prebuild": "rm -rf ./dist",
+        "build": "babel . --out-dir dist --ignore node_modules,test",
+        "prestart": "npm run build",
+        "start": "pm2-runtime start ecosystem.config.js"
     },
     "repository": {
         "type": "git",
@@ -44,7 +48,8 @@
         "express": "^4.17.1",
         "helmet": "^4.6.0",
         "log-symbols": "^4.0.0",
-        "mongodb": "^4.1.3"
+        "mongodb": "^4.1.3",
+        "pm2": "^5.1.2"
     },
     "devDependencies": {
         "@babel/cli": "^7.15.7",

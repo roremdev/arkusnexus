@@ -1,5 +1,5 @@
-// todo: implement unit test
 // todo: add helmet middleware
+// todo: deploy to heroku and github pages
 import express from 'express';
 import cors from 'cors';
 import ServerLog from './utils/ServerLog';
