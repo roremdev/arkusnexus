@@ -2,7 +2,9 @@ require('dotenv').config({ path: './config/.env' });
 
 export default {
     appName: process.env.APP_NAME,
-    serverURL: `http://${process.env.SERVER}:${process.env.PORT}`,
+    serverURL:
+        process.env.SERVER_URL ||
+        `http://${process.env.SERVER}:${process.env.PORT}`,
     port: process.env.PORT,
     mode: process.env.NODE_ENV,
     cacheTimingSeconds: process.env.CACHE_TIMING_SECONDS,
